@@ -123,3 +123,30 @@ npx snarkjs zkey contribute \
   --name="Circuit contribution" \
   -v
 ```
+
+
+NOW GENERATE PROOFS(generate the actual proof from the witness and the final zkey)
+
+```sh
+npx snarkjs groth16 prove \
+  src/groth16/build/confidential_transfer_final.zkey \
+  src/groth16/build/witness.wtns \
+  src/groth16/build/proof.json \
+  src/groth16/build/public.json
+```
+
+
+- Export Verification key
+```sh
+npx snarkjs zkey export verificationkey \
+  src/groth16/build/confidential_transfer_final.zkey \
+  src/groth16/build/verification_key.json
+```
+
+- Verify the proof
+```sh
+npx snarkjs groth16 verify \
+  src/groth16/build/verification_key.json \
+  src/groth16/build/public.json \
+  src/groth16/build/proof.json
+```
