@@ -26,7 +26,7 @@ const bobCommitment = new Commitment(bobBalance, bobBlind);
 
 
 
-// Accounts
+// Accountsconfidential_transfer.circom
 
 const aliceAccount = createAccount("Alice", aliceBalance, aliceBlind);
 const bobAccount = createAccount("Bob", bobBalance, bobBlind);
