@@ -1,0 +1,13 @@
+1,1,0,main.oldSenderCommitment
+2,2,0,main.newSenderCommitment
+3,3,0,main.oldReceiverCommitment
+4,4,0,main.newReceiverCommitment
+5,5,0,main.oldSenderBalance
+6,6,0,main.newSenderBalance
+7,7,0,main.oldReceiverBalance
+8,8,0,main.newReceiverBalance
+9,9,0,main.amount
+10,10,0,main.oldSenderBlind
+11,11,0,main.newSenderBlind
+12,12,0,main.oldReceiverBlind
+13,13,0,main.newReceiverBlind
