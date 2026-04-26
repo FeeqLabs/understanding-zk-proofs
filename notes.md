@@ -95,3 +95,12 @@ npx snarkjs powersoftau contribute \
   --name="First contribution" \
   -v
 ```
+
+Phase 2
+- 
+```sh
+npx snarkjs powersoftau prepare phase2 \
+  src/groth16/build/pot12_0001.ptau \
+  src/groth16/build/pot12_final.ptau \
+  -v
+  ```
