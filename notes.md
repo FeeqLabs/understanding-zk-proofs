@@ -53,3 +53,29 @@ Powers of Tau phase: Creates a general SRS for circuits up to a given size. This
 Circuit Specific: The parameters generated during the first phase are combined with the polynomials from the circuit’s R1CS representation and used to generate circuit-specific keys:
 Proving key (PK): Used by the prover to generate proofs.
 Verification key (VK): Used by the verifier to verify the proofs.
+
+
+
+
+
+comopile the circuit
+```sh
+circom src/groth16/circuits/confidential_transfer.circom \
+  --r1cs \
+  --wasm \
+  --sym \
+  -o src/groth16/build
+  ```
+
+genmerate witness
+```sh
+node src/groth16/build/confidential_transfer_js/generate_witness.js \
+  src/groth16/build/confidential_transfer_js/confidential_transfer.wasm \
+  src/groth16/input.json \
+  src/groth16/build/witness.wtns
+```
+
+inspect the circuit
+```sh
+npx snarkjs r1cs info src/groth16/build/confidential_transfer.r1cs
+```
