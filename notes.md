@@ -94,13 +94,32 @@ npx snarkjs powersoftau contribute \
   src/groth16/build/pot12_0001.ptau \
   --name="First contribution" \
   -v
-```
 
-Phase 2
-- 
-```sh
+
 npx snarkjs powersoftau prepare phase2 \
   src/groth16/build/pot12_0001.ptau \
   src/groth16/build/pot12_final.ptau \
   -v
-  ```
+
+```
+
+
+Phase 2 — Circuit-specific setup
+Now we bind the universal setup to your exact circuit.
+- 
+
+```sh
+npx snarkjs groth16 setup \
+  src/groth16/build/confidential_transfer.r1cs \
+  src/groth16/build/pot12_final.ptau \
+  src/groth16/build/confidential_transfer_0000.zkey
+```
+
+- Contribute once again
+```sh
+npx snarkjs zkey contribute \
+  src/groth16/build/confidential_transfer_0000.zkey \
+  src/groth16/build/confidential_transfer_final.zkey \
+  --name="Circuit contribution" \
+  -v
+```
