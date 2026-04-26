@@ -1,4 +1,17 @@
 {
-  "a": 9,
-  "b": 4
+  "oldSenderBalance": 50,
+  "newSenderBalance": 35,
+  "oldReceiverBalance": 20,
+  "newReceiverBalance": 35,
+  "amount": 15,
+
+  "oldSenderBlind": 13,
+  "newSenderBlind": 21,
+  "oldReceiverBlind": 44,
+  "newReceiverBlind": 66,
+
+  "oldSenderCommitment": 953,
+  "newSenderCommitment": 1036,
+  "oldReceiverCommitment": 1584,
+  "newReceiverCommitment": 2431
 }
