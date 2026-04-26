@@ -67,7 +67,7 @@ circom src/groth16/circuits/confidential_transfer.circom \
   -o src/groth16/build
   ```
 
-genmerate witness
+generate witness
 ```sh
 node src/groth16/build/confidential_transfer_js/generate_witness.js \
   src/groth16/build/confidential_transfer_js/confidential_transfer.wasm \
@@ -150,3 +150,31 @@ npx snarkjs groth16 verify \
   src/groth16/build/public.json \
   src/groth16/build/proof.json
 ```
+
+
+
+
+EXAMPLE
+
+-     regenerate witness
+* regenerate proof
+* verify again
+
+
+
+ONCHAIN VERIFICATION METHOD
+- generate soliidty verifier
+```sh
+npx snarkjs zkey export solidityverifier \
+  src/groth16/build/confidential_transfer_final.zkey \
+  src/groth16/contracts/Verifier.sol
+```
+ - install foundry and cp into 
+
+- generate the calldata to test for
+```sh
+npx snarkjs zkey export soliditycalldata \
+  src/groth16/build/public.json \
+  src/groth16/build/proof.json
+```
+
