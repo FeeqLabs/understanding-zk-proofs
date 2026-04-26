@@ -79,3 +79,19 @@ inspect the circuit
 ```sh
 npx snarkjs r1cs info src/groth16/build/confidential_transfer.r1cs
 ```
+
+
+Groth16 setup phase
+- install power of Tau
+```sh
+npx snarkjs powersoftau new bn128 12 src/groth16/build/pot12_0000.ptau -v
+```
+
+- contribute to the ceremony ( this adds entropy{randomness})
+```sh
+npx snarkjs powersoftau contribute \
+  src/groth16/build/pot12_0000.ptau \
+  src/groth16/build/pot12_0001.ptau \
+  --name="First contribution" \
+  -v
+```
